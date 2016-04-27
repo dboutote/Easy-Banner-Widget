@@ -106,7 +106,7 @@ class Easy_Banner_Widget_Fields
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
 	 */
-	public function build_field_banner_color( $instance, $widget )
+	public static function build_field_banner_color( $instance, $widget )
 	{
 		ob_start();
 		?>
@@ -160,7 +160,7 @@ class Easy_Banner_Widget_Fields
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
 	 */
-	public function build_field_text_color( $instance, $widget )
+	public static function build_field_text_color( $instance, $widget )
 	{
 		ob_start();
 		?>
