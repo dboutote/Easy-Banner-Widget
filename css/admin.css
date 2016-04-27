@@ -1,0 +1,57 @@
+.widgin-widget-form { margin-bottom: 15px; }
+
+.widgin-section { margin: 5px 0; }
+
+.easy-banner-widget-form .widgin-fieldset {
+	background-color: #fff;
+	border: 0 none;
+	padding: 0;
+}
+
+.widgin-preview-container {
+	max-width: 378px;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	margin: 1em 0 13px;
+	overflow-x: auto;
+	overflow-y: hidden !important;
+	width: 100%;				
+}
+
+#customize-controls .widgin-preview-container { max-width: 210px; }
+
+
+.widgin-description {
+	margin-bottom: 1em !important; 
+	padding-bottom: 0 !important; 
+	}
+	
+.widgin-description b {
+	color: #444;
+}
+
+
+.widgin-fieldset label {
+    display: inline-block;
+    margin-bottom: 1px;
+    padding: 1px 0;
+}
+
+.widgin-fieldset h5 {
+	font-size: 1em;
+	margin: 1
+}
+
+
+.easy-banner-widget-form .widgin-description {
+	padding: 0 !important;
+}
+
+.easy-banner-widget-form .widgin-description p {
+	margin: 0;
+}
+
+#available-widgets [class*=easy-banner-widget] .widget-title:before {
+   content: "\f488";
+}
