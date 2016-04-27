@@ -61,6 +61,7 @@ Check out the project's GitHub page: https://github.com/dboutote/Easy-Banners-Wi
 1. Straight-forward widget options.
 2. Example banners with default styling.
 3. Example banners with custom styling.
+4. Preview your color combos!
 
 
 == Changelog ==
