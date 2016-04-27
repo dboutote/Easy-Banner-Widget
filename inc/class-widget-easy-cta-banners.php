@@ -1,11 +1,11 @@
 <?php
 /**
- * Widget_Easy_CTA_Banner Class
+ * Widget_Easy_CTA_Banners Class
  *
  * Adds a Posts widget with extended functionality
  *
- * @package Easy_Banner_Widget
- * @subpackage Widget_Easy_CTA_Banner
+ * @package Easy_Banners_Widget
+ * @subpackage Widget_Easy_CTA_Banners
  *
  * @since 1.0
  */
@@ -25,8 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see WP_Widget
  */
-class Widget_Easy_CTA_Banner extends WP_Widget
+class Widget_Easy_CTA_Banners extends WP_Widget
 {
+
 
 	/**
 	 * Sets up a new widget instance.
@@ -38,7 +39,7 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 	public function __construct()
 	{
 		$widget_options = array(
-			'classname'                   => 'widget_easy_banner easy-banner-widget',
+			'classname'                   => 'widget_easy_banners easy-banners-widget',
 			'description'                 => __( 'A customizable call-to-action banner.' ),
 			'customize_selective_refresh' => true,
 			);
@@ -46,14 +47,13 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 		$control_options = array();
 
 		parent::__construct(
-			'easy-banner-widget',               // $this->id_base
-			__( 'Easy Banner' ), // $this->name
-			$widget_options,                    // $this->widget_options
-			$control_options                    // $this->control_options
+			'easy-banners-widget', // $this->id_base
+			__( 'Easy Banners' ),  // $this->name
+			$widget_options,       // $this->widget_options
+			$control_options       // $this->control_options
 		);
 
-		$this->alt_option_name = 'widget_easy_banner';
-
+		$this->alt_option_name = 'widget_easy_banners';
 	}
 
 
@@ -68,7 +68,7 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 	 *
 	 * @param array $args     Display arguments including 'before_title', 'after_title',
 	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance Settings for the current Categories widget instance.
+	 * @param array $instance Settings for the current widget instance.
 	 */
 	public function widget( $args, $instance )
 	{
@@ -76,7 +76,7 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 			$args['widget_id'] = $this->id;
 		}
 
-		$_defaults = Easy_Banner_Widget_Utils::instance_defaults();
+		$_defaults = Easy_Banners_Widget_Utils::instance_defaults();
 		$instance = wp_parse_args( (array) $instance, $_defaults );
 
 		// build out the instance for devs
@@ -86,6 +86,7 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 
 		// widget title
 		$_title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+		$_title = apply_filters( 'ectabw_widget_title', $_title, $instance, $this->id_base );
 
 		echo $args['before_widget'];
 
@@ -103,25 +104,25 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 		 * @since 1.0
 		 */
 		if( ! empty( $instance['css_default'] ) && is_customize_preview() ) {
-			echo Easy_Banner_Widget_Utils::css_preview( $instance, $this );
+			echo Easy_Banners_Widget_Utils::css_preview( $instance, $this );
 		}
 		?>
 
-		<div class="easy-banner-widget easy-cta-banner-wrap">
+		<div class="easy-banners-widget easy-cta-banners-wrap">
 
 			<?php
 
 			do_action( 'ectabw_banner_before', $instance );
 
-			Easy_Banner_Widget_Views::banner( $instance );
+			Easy_Banners_Widget_Views::banner( $instance );
 
 			do_action( 'ectabw_banner_after', $instance );
 
 			?>
 
-		</div><!-- /.easy-cta-banner-wrap -->
+		</div><!-- /.easy-cta-banners-wrap -->
 
-		<?php Easy_Banner_Widget_Views::colophon(); ?>
+		<?php Easy_Banners_Widget_Views::colophon(); ?>
 
 		<?php echo $args['after_widget']; ?>
 
@@ -197,11 +198,11 @@ class Widget_Easy_CTA_Banner extends WP_Widget
 	 */
 	public function form( $instance )
 	{
-		$defaults = Easy_Banner_Widget_Utils::instance_defaults();
+		$defaults = Easy_Banners_Widget_Utils::instance_defaults();
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
-		include( Easy_Banner_Widget_Utils::get_plugin_sub_path('inc') . 'widget-form.php' );
+		include( Easy_Banners_Widget_Utils::get_plugin_sub_path('inc') . 'widget-form.php' );
 	}
 
 }

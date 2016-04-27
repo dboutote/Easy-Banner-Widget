@@ -1,18 +1,18 @@
 <?php
 
 /**
-* Easy_Banner_Widget_Fields Class
+* Easy_Banners_Widget_Fields Class
 *
 * Handles generation of widget form fields.
 * All methods are static, this is basically a namespacing class wrapper.
 *
-* @package Easy_Banner_Widget
-* @subpackage Easy_Banner_Widget_Fields
+* @package Easy_Banners_Widget
+* @subpackage Easy_Banners_Widget_Fields
 *
 * @since 1.0
 */
 
-class Easy_Banner_Widget_Fields
+class Easy_Banners_Widget_Fields
 {
 
 	public function __construct(){}
@@ -84,7 +84,7 @@ class Easy_Banner_Widget_Fields
 		?>
 
 		<p>
-			<label for="<?php echo $widget->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'easy-banner-widget' ); ?></label>
+			<label for="<?php echo $widget->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'easy-banners-widget' ); ?></label>
 			<input class="widefat" id="<?php echo $widget->get_field_id( 'title' ); ?>" name="<?php echo $widget->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 
@@ -112,7 +112,7 @@ class Easy_Banner_Widget_Fields
 		?>
 
 		<p>
-			<label for="<?php echo $widget->get_field_id( 'banner_color' ); ?>"><?php _e( 'Banner Color:', 'easy-banner-widget' ); ?></label><br />
+			<label for="<?php echo $widget->get_field_id( 'banner_color' ); ?>"><?php _e( 'Banner Color:', 'easy-banners-widget' ); ?></label><br />
 			<input class="widefat ectabw-color-picker" id="<?php echo $widget->get_field_id( 'banner_color' ); ?>" name="<?php echo $widget->get_field_name( 'banner_color' ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_color'] ); ?>" />
 		</p>
 
@@ -139,7 +139,7 @@ class Easy_Banner_Widget_Fields
 		?>
 
 		<p>
-			<label for="<?php echo $widget->get_field_id( 'banner_text' ); ?>"><?php _e( 'Banner Text:', 'easy-banner-widget' ); ?></label><br />
+			<label for="<?php echo $widget->get_field_id( 'banner_text' ); ?>"><?php _e( 'Banner Text:', 'easy-banners-widget' ); ?></label><br />
 			<textarea class="widefat" rows="5" cols="20" id="<?php echo $widget->get_field_id('banner_text'); ?>" name="<?php echo $widget->get_field_name('banner_text'); ?>"><?php echo esc_textarea( $instance['banner_text'] ); ?></textarea>
 		</p>
 
@@ -166,7 +166,7 @@ class Easy_Banner_Widget_Fields
 		?>
 
 		<p>
-			<label for="<?php echo $widget->get_field_id( 'text_color' ); ?>"><?php _e( 'Text Color:', 'easy-banner-widget' ); ?></label><br />
+			<label for="<?php echo $widget->get_field_id( 'text_color' ); ?>"><?php _e( 'Text Color:', 'easy-banners-widget' ); ?></label><br />
 			<input class="widefat ectabw-color-picker" id="<?php echo $widget->get_field_id( 'text_color' ); ?>" name="<?php echo $widget->get_field_name( 'text_color' ); ?>" type="color" value="<?php echo esc_attr( $instance['text_color'] ); ?>" />
 		</p>
 
@@ -196,7 +196,7 @@ class Easy_Banner_Widget_Fields
 		<p>
 			<input id="<?php echo $widget->get_field_id( 'banner_linked' ); ?>" name="<?php echo $widget->get_field_name( 'banner_linked' ); ?>" type="checkbox" <?php checked( $instance['banner_linked'], 1 ); ?> />
 			<label for="<?php echo $widget->get_field_id( 'banner_linked' ); ?>">
-				<?php _e( 'Link Banner?', 'easy-banner-widget' ); ?>
+				<?php _e( 'Link Banner?', 'easy-banners-widget' ); ?>
 			</label>
 		</p>
 
@@ -223,7 +223,7 @@ class Easy_Banner_Widget_Fields
 		?>
 
 		<p>
-			<label for="<?php echo $widget->get_field_id( 'banner_url' ); ?>"><?php _e( 'Banner URL:', 'easy-banner-widget' ); ?></label>
+			<label for="<?php echo $widget->get_field_id( 'banner_url' ); ?>"><?php _e( 'Banner URL:', 'easy-banners-widget' ); ?></label>
 			<input class="widefat" id="<?php echo $widget->get_field_id( 'banner_url' ); ?>" name="<?php echo $widget->get_field_name( 'banner_url' ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_url'] ); ?>" />
 		</p>
 
@@ -252,7 +252,7 @@ class Easy_Banner_Widget_Fields
 		<p>
 			<input id="<?php echo $widget->get_field_id( 'css_default' ); ?>" name="<?php echo $widget->get_field_name( 'css_default' ); ?>" type="checkbox" <?php checked( $instance['css_default'], 1 ); ?> />
 			<label for="<?php echo $widget->get_field_id( 'css_default' ); ?>">
-				<?php _e( 'Use Default Styles?', 'easy-banner-widget' ); ?>
+				<?php _e( 'Use Default Styles?', 'easy-banners-widget' ); ?>
 			</label>
 		</p>
 

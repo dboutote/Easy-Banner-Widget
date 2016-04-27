@@ -2,7 +2,7 @@
  * Plugin functions file.
  *
  */
-if( "undefined"==typeof jQuery )throw new Error( "Easy Banner Widget's JavaScript requires jQuery" );
+if( "undefined"==typeof jQuery )throw new Error( "Easy Banners Widget's JavaScript requires jQuery" );
 
 (function ( $ ) {
 

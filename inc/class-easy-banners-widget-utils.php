@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Easy_Banner_Widget_Utils Class
+ * Easy_Banners_Widget_Utils Class
  *
  * All methods are static, this is basically a namespacing class wrapper.
  *
- * @package Easy_Banner_Widget
- * @subpackage Easy_Banner_Widget_Utils
+ * @package Easy_Banners_Widget
+ * @subpackage Easy_Banners_Widget_Utils
  *
  * @since 1.0
  */
@@ -20,13 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Easy_Banner_Widget_Utils Class
+ * Easy_Banners_Widget_Utils Class
  *
- * Group of utility methods for use by Easy_Banner_Widget
+ * Group of utility methods for use by Easy_Banners_Widget
  *
  * @since 1.0
  */
-class Easy_Banner_Widget_Utils
+class Easy_Banners_Widget_Utils
 {
 
 	/**
@@ -36,7 +36,7 @@ class Easy_Banner_Widget_Utils
 	 *
 	 * @var string
 	 */
-	public static $base_file = EASY_BANNER_WIDGET_FILE;
+	public static $base_file = EASY_BANNERS_WIDGET_FILE;
 
 
 	/**
@@ -60,7 +60,7 @@ class Easy_Banner_Widget_Utils
 	/**
 	 * Generates path to subdirectory of plugin root
 	 *
-	 * @see Easy_Banner_Widget_Utils::get_plugin_path()
+	 * @see Easy_Banners_Widget_Utils::get_plugin_path()
 	 *
 	 * @uses WordPress trailingslashit()
 	 *
@@ -107,7 +107,7 @@ class Easy_Banner_Widget_Utils
 	/**
 	 * Generates url to subdirectory of plugin root
 	 *
-	 * @see Easy_Banner_Widget_Utils::get_plugin_url()
+	 * @see Easy_Banners_Widget_Utils::get_plugin_url()
 	 *
 	 * @uses WordPress trailingslashit()
 	 *
@@ -168,7 +168,7 @@ class Easy_Banner_Widget_Utils
 	{
 		$_defaults = array(
 			'title'         => __( 'Call to Action' ),
-			'banner_color'  => '#000000',
+			'banner_color'  => '#21759B',
 			'banner_text'   => '',
 			'text_color'    => '#ffffff',
 			'banner_linked' => 0,
@@ -260,7 +260,7 @@ class Easy_Banner_Widget_Utils
 	 *
 	 * Actual stylesheet is enqueued if the user selects to use default styles
 	 *
-	 * @see Widget_APW_Recent_Categories::widget()
+	 * @see Widget_Easy_CTA_Banners::widget()
 	 *
 	 * @access public
 	 *
@@ -361,8 +361,6 @@ class Easy_Banner_Widget_Utils
 
 		return apply_filters( 'ectabw_item_style', $_style, $instance );
 	}	
-	
-	
 	
 
 }

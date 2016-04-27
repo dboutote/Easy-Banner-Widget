@@ -2,7 +2,7 @@
 
 .widgin-section { margin: 5px 0; }
 
-.easy-banner-widget-form .widgin-fieldset {
+.easy-banners-widget-form .widgin-fieldset {
 	background-color: #fff;
 	border: 0 none;
 	padding: 0;
@@ -44,14 +44,15 @@
 }
 
 
-.easy-banner-widget-form .widgin-description {
+.easy-banners-widget-form .widgin-description {
 	padding: 0 !important;
 }
 
-.easy-banner-widget-form .widgin-description p {
+.easy-banners-widget-form .widgin-description p {
 	margin: 0;
 }
 
-#available-widgets [class*=easy-banner-widget] .widget-title:before {
+#available-widgets [class*=easy-banners-widget] .widget-title:before {
    content: "\f488";
+   content: "\f181";
 }

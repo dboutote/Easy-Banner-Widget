@@ -1,16 +1,16 @@
-# Easy Banner Widget
+# Easy Banners Widget
 
-An easy-to-use, customizable, call-to-action banner widget.
+Easily build call-to-action banners in your sidebars.
 
-The Easy Banner Widget is an easy-to-use widget that allows you to configure and display call-to-action banners in your site's sidebars.
+The Easy Banners Widget is an easy-to-use widget that allows you to configure and display call-to-action bannerss in your site's sidebars.
 
 ## Features
 
 * Configurable widget title.
 * Easily select banner color using built-in color picker.
-* Include `html` in your banner message.
+* Include `html` in your banners message.
 * Easily select text color using built-in color picker.
-* Easily link the banner to any url.
+* Easily link the banners to any url.
 * Choose the default (basic) CSS styling or roll your own.
 
 ## Developer Features
@@ -19,7 +19,7 @@ This widget was built not only with end-users in mind, but also plugin developer
 
 * Need to remove a field from the widget form?  Not a problem!  Every field is passed through its own filter for easy customization.
 * Need to modify the output of the widget?  Easy!  The output is passed through numerous filters, allowing you to customize the post list to meet your project's requirements.
-* For a full list of action hooks and filters, please see the plugin documentation: http://darrinb.com/plugins/easy-banner-widget
+* For a full list of action hooks and filters, please see the plugin documentation: http://darrinb.com/plugins/easy-banners-widget
 
 
 ## Installation
@@ -33,7 +33,7 @@ This widget was built not only with end-users in mind, but also plugin developer
 
 ### From GitHub:
 
-* Download the [latest stable version](https://github.com/dboutote/Advanced-Categories-Widget/archive/master.zip).
+* Download the [latest stable version](https://github.com/dboutote/Easy-Banners-Widget/archive/master.zip).
 * Extract the zip folder to your plugins directory.
 * Activate in the "Plugins" area of your admin by clicking the "Activate" link.
 * No further setup or configuration is necessary.
@@ -42,7 +42,7 @@ This widget was built not only with end-users in mind, but also plugin developer
 
 #### Where can I find additional additional documentation?
 
-The plugin's official page: http://darrinb.com/plugins/easy-banner-widget
+The plugin's official page: http://darrinb.com/plugins/easy-banners-widget
 
 #### Can I contribute?
 
