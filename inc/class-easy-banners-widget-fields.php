@@ -113,7 +113,7 @@ class Easy_Banners_Widget_Fields
 
 		<p>
 			<label for="<?php echo $widget->get_field_id( 'banner_color' ); ?>"><?php _e( 'Banner Color:', 'easy-banners-widget' ); ?></label><br />
-			<input class="widefat ectabw-color-picker" id="<?php echo $widget->get_field_id( 'banner_color' ); ?>" name="<?php echo $widget->get_field_name( 'banner_color' ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_color'] ); ?>" />
+			<input class="widefat ectabw-color-picker ectabw-banner-color" id="<?php echo $widget->get_field_id( 'banner_color' ); ?>" name="<?php echo $widget->get_field_name( 'banner_color' ); ?>" type="text" value="<?php echo esc_attr( $instance['banner_color'] ); ?>" />
 		</p>
 
 		<?php
@@ -140,7 +140,7 @@ class Easy_Banners_Widget_Fields
 
 		<p>
 			<label for="<?php echo $widget->get_field_id( 'banner_text' ); ?>"><?php _e( 'Banner Text:', 'easy-banners-widget' ); ?></label><br />
-			<textarea class="widefat" rows="5" cols="20" id="<?php echo $widget->get_field_id('banner_text'); ?>" name="<?php echo $widget->get_field_name('banner_text'); ?>"><?php echo esc_textarea( $instance['banner_text'] ); ?></textarea>
+			<textarea class="widefat ectabw-banner-text" rows="5" cols="20" id="<?php echo $widget->get_field_id('banner_text'); ?>" name="<?php echo $widget->get_field_name('banner_text'); ?>"><?php echo esc_textarea( $instance['banner_text'] ); ?></textarea>
 		</p>
 
 		<?php
@@ -167,7 +167,7 @@ class Easy_Banners_Widget_Fields
 
 		<p>
 			<label for="<?php echo $widget->get_field_id( 'text_color' ); ?>"><?php _e( 'Text Color:', 'easy-banners-widget' ); ?></label><br />
-			<input class="widefat ectabw-color-picker" id="<?php echo $widget->get_field_id( 'text_color' ); ?>" name="<?php echo $widget->get_field_name( 'text_color' ); ?>" type="color" value="<?php echo esc_attr( $instance['text_color'] ); ?>" />
+			<input class="widefat ectabw-color-picker ectabw-text-color" id="<?php echo $widget->get_field_id( 'text_color' ); ?>" name="<?php echo $widget->get_field_name( 'text_color' ); ?>" type="color" value="<?php echo esc_attr( $instance['text_color'] ); ?>" />
 		</p>
 
 		<?php

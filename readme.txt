@@ -7,12 +7,13 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easily build call-to-action banners in your sidebars.
+Easily build call-to-action banners for your sidebars.
 
 == Description ==
 
 The Easy Banners Widget is an easy-to-use widget that allows you to configure and display call-to-action banners in your site's sidebars.
 
+_Preview your color selections before saving._
 
 __Features__
 
@@ -20,7 +21,8 @@ __Features__
 * Easily select banner color using built-in color picker.
 * Include `html` in your banners message.
 * Easily select text color using built-in color picker.
-* Easily link the banners to any url.
+* Preview your color selections before saving!
+* Easily link banners to any url.
 * Choose the default (basic) CSS styling or roll your own.
 
 __Developer Features__

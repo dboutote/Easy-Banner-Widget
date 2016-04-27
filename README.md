@@ -1,8 +1,10 @@
 # Easy Banners Widget
 
-Easily build call-to-action banners in your sidebars.
+Easily build call-to-action banners for your sidebars.
 
 The Easy Banners Widget is an easy-to-use widget that allows you to configure and display call-to-action bannerss in your site's sidebars.
+
+_Preview your color selections before saving._
 
 ## Features
 
@@ -10,7 +12,8 @@ The Easy Banners Widget is an easy-to-use widget that allows you to configure an
 * Easily select banner color using built-in color picker.
 * Include `html` in your banners message.
 * Easily select text color using built-in color picker.
-* Easily link the banners to any url.
+* Preview your color selections before saving!
+* Easily link banners to any url.
 * Choose the default (basic) CSS styling or roll your own.
 
 ## Developer Features
