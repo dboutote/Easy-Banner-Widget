@@ -2,7 +2,7 @@
 Contributors: dbmartin
 Tags: banners, banners-widget, call-to-action, cta, widget
 Requires at least: 4.4
-Tested up to: 4.5.1
+Tested up to: 4.5.2
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,7 +30,7 @@ __Developer Features__
 This widget was built not only with end-users in mind, but also plugin developers.  Almost every aspect of this widget is extensible through filters and action hooks.  You can even add your own form fields to the widget form!
 
 * Need to remove a field from the widget form?  Not a problem!  Every field is passed through its own filter for easy customization.
-* Need to modify the output of the widget?  Easy!  The output is passed through numerous filters, allowing you to customize the post list to meet your project's requirements.
+* Need to modify the output of the widget?  Easy!  The output is passed through numerous filters, allowing you to customize the content to meet your project's requirements.
 * For a full list of action hooks and filters, please see the plugin documentation: http://darrinb.com/plugins/easy-banners-widget
 
 

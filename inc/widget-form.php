@@ -9,8 +9,15 @@
  *
  * @package Easy_Banners_Widget
  *
- * @since 1.0
+ * @since 1.0.0
  */
+
+// No direct access
+if( ! defined( 'ABSPATH' ) ){
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
 ?>
 <div class="easy-banners-widget-form">
 

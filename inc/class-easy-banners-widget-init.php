@@ -7,8 +7,7 @@
  *
  * @package Easy_Banners_Widget
  *
- * @since 1.0
- *
+ * @since 1.0.0
  */
 
 // No direct access
@@ -25,7 +24,7 @@ class Easy_Banners_Widget_Init
 	/**
 	 * Full file path to plugin file
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -35,7 +34,7 @@ class Easy_Banners_Widget_Init
 	/**
 	 * URL to plugin
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -45,7 +44,7 @@ class Easy_Banners_Widget_Init
 	/**
 	 * Filesystem directory path to plugin
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -57,7 +56,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * e.g. "easy-banners-widget/easy-banners-widget.php"
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -69,7 +68,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $file Full file path to calling plugin file
 	 */
@@ -88,18 +87,19 @@ class Easy_Banners_Widget_Init
 	 * @see Easy_Banners_Widget_Init::init_widget()
 	 * @see Easy_Banners_Widget_Init::init_admin_scripts_and_styles()
 	 * @see Easy_Banners_Widget_Init::store_css_option()
-	 * @see Easy_Banners_Widget_Init::init_css_option()
+	 * @see Easy_Banners_Widget_Init::init_front_styles()
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function init()
 	{
 		$this->init_widget();
 		$this->init_admin_scripts_and_styles();
 		$this->store_css_option();
-		$this->init_css_option();
+		$this->init_front_styles();
+		$this->init_del_options();
 	}
 
 
@@ -110,7 +110,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function init_widget()
 	{
@@ -125,7 +125,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function register_widget()
 	{
@@ -141,9 +141,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
-	 *
-	 * @return void
+	 * @since 1.0.0
 	 */
 	public function init_admin_scripts_and_styles()
 	{
@@ -159,11 +157,11 @@ class Easy_Banners_Widget_Init
 	/**
 	 * Loads js admin scripts
 	 *
+	 * Note: Only loads on customize.php or widgets.php
+	 *
 	 * @access public
 	 *
-	 * @since 1.0
-	 *
-	 * @return void
+	 * @since 1.0.0
 	 */
 	public function admin_scripts( $hook )
 	{
@@ -179,9 +177,10 @@ class Easy_Banners_Widget_Init
 			return;
 		};
 
-		wp_register_script( 'ectabw-spectrum', $this->url . 'js/spectrum.js', array( 'jquery' ), '', true );
+		wp_register_script( 'widgins', $this->url . 'js/widgins.js', array( 'jquery' ), '1.0.0', true );
+		wp_register_script( 'ectabw-spectrum', $this->url . 'js/spectrum.js', array( 'jquery' ), '1.8.0', true );
 
-		wp_enqueue_script( 'ectabw-admin-scripts', $this->url . 'js/admin.js', array( 'ectabw-spectrum' ), '', true );
+		wp_enqueue_script( 'ectabw-admin-scripts', $this->url . 'js/admin.js', array( 'ectabw-spectrum', 'widgins' ), '', true );
 	}
 
 
@@ -192,15 +191,20 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
-	 *
-	 * @return void
+	 * @since 1.0.0
 	 */
 	public function admin_styles()
 	{
+		wp_register_style( 'widgins', $this->url . 'css/widgins.css', array(), '1.0.0', 'all' );
 		wp_register_style( 'ectabw-spectrum', $this->url . 'css/spectrum.css', array(), null );
 
-		wp_enqueue_style( 'ectabw-admin-styles', $this->url . 'css/admin.css', array( 'ectabw-spectrum' ), null );
+		wp_enqueue_style(
+			'ectabw-admin-styles',
+			$this->url . 'css/admin.css',
+			array( 'widgins', 'ectabw-spectrum' ),
+			'1.0.0',
+			'all'
+		);
 	}
 
 
@@ -211,7 +215,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function store_css_option()
 	{
@@ -232,12 +236,12 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
-	 * @param object $widget Widget|WP_Customize_Setting instance; depends on calling filter.
-	 * @param array $instance Current widget settings pre-save
-	 * @param array $new_instance New settings for instance input by the user via WP_Widget::form().
-	 * @param array $old_instance Old settings for instance.
+	 * @param object $widget       Widget|WP_Customize_Setting instance; depends on calling filter.
+	 * @param array  $instance     Current widget settings pre-save
+	 * @param array  $new_instance New settings for instance input by the user via WP_Widget::form().
+	 * @param array  $old_instance Old settings for instance.
 	 */
 	public function maybe_store_css( $widget, $instance = array(), $new_instance = array(), $old_instance = array() )
 	{
@@ -285,9 +289,9 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
-	public function init_css_option()
+	public function init_front_styles()
 	{
 		add_action( 'wp_enqueue_scripts', array( $this, 'front_styles' ) );
 	}
@@ -300,7 +304,7 @@ class Easy_Banners_Widget_Init
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
@@ -322,7 +326,49 @@ class Easy_Banners_Widget_Init
 		if( $enqueue ) {
 			wp_enqueue_style( 'ectabw-css-defaults', $this->url . 'css/front.css', null, null );
 		}
+	}
 
+
+	/**
+	 * Calls to delete widget options on widget delete
+	 *
+	 * @see Easy_Shuffle_Widget_Init::delete_widget_options()
+	 *
+	 * @access public
+	 *
+	 * @since 1.0.0
+	 */
+	public function init_del_options()
+	{
+		add_action( 'delete_widget', array( $this, 'delete_widget_options' ), 0, 3 );
+	}
+
+
+	/**
+	 * Unsticks/removes widget options when widget is deleted
+	 *
+	 * @access public
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $widget_id  ID of the widget marked for deletion.
+	 * @param string $sidebar_id ID of the sidebar the widget was deleted from.
+	 * @param string $id_base    ID base for the widget.
+	 */
+	public function delete_widget_options( $widget_id = 0, $sidebar_id = '', $id_base = '' )
+	{
+		// if there's no widget, bail
+		if( ! $widget_id ) {
+			return;
+		}
+
+		global $wp_registered_widgets;
+
+		if ( ! isset( $wp_registered_widgets[$widget_id] ) ) {
+			return;
+		}
+
+		Easy_Banners_Widget_Utils::unstick_css( $widget_id );
 	}
 
 }

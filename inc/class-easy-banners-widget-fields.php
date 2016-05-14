@@ -9,13 +9,20 @@
 * @package Easy_Banners_Widget
 * @subpackage Easy_Banners_Widget_Fields
 *
-* @since 1.0
+* @since 1.0.0
 */
+
+// No direct access
+if( ! defined( 'ABSPATH' ) ){
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
 
 class Easy_Banners_Widget_Fields
 {
 
-	public function __construct(){}
+	private function __construct(){}
 
 
 	/**
@@ -23,7 +30,7 @@ class Easy_Banners_Widget_Fields
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $fieldset Name (slug) of fieldset.
 	 * @param array  $fields   Fields to load.
@@ -67,13 +74,12 @@ class Easy_Banners_Widget_Fields
 	}
 
 
-
 	/**
 	 * Builds form field: title
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -93,15 +99,14 @@ class Easy_Banners_Widget_Fields
 
 		return $field;
 	}
-	
-	
-	
+
+
 	/**
 	 * Builds form field: banner_color
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -128,7 +133,7 @@ class Easy_Banners_Widget_Fields
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -148,14 +153,14 @@ class Easy_Banners_Widget_Fields
 
 		return $field;
 	}
-	
-	
+
+
 	/**
 	 * Builds form field: text_color
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -177,13 +182,12 @@ class Easy_Banners_Widget_Fields
 	}
 
 
-
 	/**
 	 * Builds form field: banner_linked
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -212,7 +216,7 @@ class Easy_Banners_Widget_Fields
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.
@@ -239,7 +243,7 @@ class Easy_Banners_Widget_Fields
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current settings.
 	 * @param object $widget   Widget object.

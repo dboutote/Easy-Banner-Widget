@@ -9,8 +9,15 @@
  * @package Easy_Banners_Widget
  * @subpackage Easy_Banners_Widget_Views
  *
- * @since 1.0
+ * @since 1.0.0
  */
+
+// No direct access
+if( ! defined( 'ABSPATH' ) ){
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
 
 
 class Easy_Banners_Widget_Views
@@ -26,7 +33,7 @@ class Easy_Banners_Widget_Views
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance   Settings for the current widget instance.
 	 * @param bool   $echo       Flag to echo or return the method's output.
@@ -96,7 +103,7 @@ class Easy_Banners_Widget_Views
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return string Plugin attribution.
 	 */

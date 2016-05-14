@@ -8,7 +8,7 @@
  * @package Easy_Banners_Widget
  * @subpackage Easy_Banners_Widget_Utils
  *
- * @since 1.0
+ * @since 1.0.0
  */
 
 // No direct access
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Group of utility methods for use by Easy_Banners_Widget
  *
- * @since 1.0
+ * @since 1.0.0
  */
 class Easy_Banners_Widget_Utils
 {
@@ -32,7 +32,7 @@ class Easy_Banners_Widget_Utils
 	/**
 	 * Plugin root file
 	 *
-	 * @since 0.1.1
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -46,7 +46,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return string $path Path to plugin root.
 	 */
@@ -66,7 +66,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $directory The name of the requested subdirectory.
 	 *
@@ -93,7 +93,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return string $url URL of plugin root.
 	 */
@@ -113,7 +113,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $directory The name of the requested subdirectory.
 	 *
@@ -140,7 +140,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return string $basename Filename of plugin root.
 	 */
@@ -160,7 +160,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @return array $defaults The default values for the widget.
 	 */
@@ -195,7 +195,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $widget_id Widget instance ID.
 	 */
@@ -227,7 +227,7 @@ class Easy_Banners_Widget_Utils
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param string $widget_id Widget instance ID.
 	 */
@@ -258,13 +258,13 @@ class Easy_Banners_Widget_Utils
 	/**
 	 * Prints link to default widget stylesheet
 	 *
-	 * Actual stylesheet is enqueued if the user selects to use default styles
+	 * Actual stylesheet is enqueued if the user selects to use default styles.
 	 *
 	 * @see Widget_Easy_CTA_Banners::widget()
 	 *
 	 * @access public
 	 *
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Current widget settings.
 	 * @param object $widget   Widget Object.
@@ -274,7 +274,7 @@ class Easy_Banners_Widget_Utils
 	 */
 	public static function css_preview( $instance, $widget, $echo = true )
 	{
-		$_css_url =  self::get_plugin_sub_url('css') . 'front.css' ;
+		$_css_url =  self::get_plugin_sub_url( 'css' ) . 'front.css' ;
 
 		$css_url = sprintf('<link rel="stylesheet" href="%s" type="text/css" media="all" />',
 			esc_url( $_css_url )
@@ -294,15 +294,15 @@ class Easy_Banners_Widget_Utils
 	 * Use 'ectabw_item_id' filter to modify item ID before output.
 	 *
 	 * @access public
-	 * @since 1.0
 	 *
-	 * @param array  $instance Widget instance.
+	 * @since 1.0.0
+	 *
+	 * @param array $instance Widget instance.
 	 *
 	 * @return string $item_id Filtered item ID.
 	 */
 	public static function get_item_id( $instance = array() )
 	{
-
 		$_item_id = $instance['widget_id'];
 
 		$item_id = sanitize_html_class( $_item_id );
@@ -317,7 +317,7 @@ class Easy_Banners_Widget_Utils
 	 * Use 'ectabw_item_class' filter to modify item classes before output.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Widget instance.
 	 *
@@ -327,6 +327,7 @@ class Easy_Banners_Widget_Utils
 	{
 
 		$_classes = array();
+		$_classes[] = 'widgin-item';
 		$_classes[] = 'ectabw-item';
 		$_classes[] = 'ectabw-banner';
 		$_classes[] = 'easy-cta-banner';
@@ -347,7 +348,7 @@ class Easy_Banners_Widget_Utils
 	 * Use 'ectabw_item_style' filter to modify item ID before output.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 1.0.0
 	 *
 	 * @param array  $instance Widget instance.
 	 *
